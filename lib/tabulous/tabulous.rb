@@ -91,7 +91,7 @@ module Tabulous
     if (options[:active] && !@@active_tab_clickable) || options[:enabled] == false
       html << %Q{<span class="tab">#{options[:text]}</span>}
     else
-      html << %Q{<a href="#{options[:path]}" class="tab">#{options[:text]}</a>}
+      html << %Q{<a href="#{options[:path]}" class="tab"><span>#{options[:text]}</span></a>}
     end
     html << '</li>'
     html
