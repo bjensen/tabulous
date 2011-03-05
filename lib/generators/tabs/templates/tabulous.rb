@@ -62,7 +62,7 @@ Tabulous.setup do |config|
   #   whether the tab is disabled (unclickable)
 
 <% index_routes = Rails.application.routes.routes.select{|r| r.requirements[:action] == 'index'}
-   tab_data = index_routes.map do |route|
+   tab_data = index_routes.reject{|route| route.name.blank?}.map do |route|
      name = route.requirements[:controller].gsub('/', '_')
      { :text => name.titleize,
        :name => name,
