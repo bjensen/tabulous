@@ -49,7 +49,7 @@ module Tabulous
     active_tab = active_tab(view)
     active_tab_name = active_tab.name
     html << (@@html5 ? '<nav id="tabs">' : '<div id="tabs">')
-    html << '<ul>'
+    html << "<ul class='sf-menu'>"
     for tab in main_tabs
       next if !tab.visible?(view)
       html << render_tab(:text => tab.text(view),
